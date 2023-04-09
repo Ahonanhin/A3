@@ -1,6 +1,13 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+import json
 
+# Load the data
+with open('static/data/countries.json', 'r') as data_countries:
+    countries = json.load(data_countries)
+
+
+# print(countries["countries"]['country'][0]['countryName'])
 
 # Create the Flask app
 app = Flask(__name__)
@@ -30,6 +37,15 @@ def user():
 @app.route('/video')
 def video():
     return render_template("home.html")
+
+
+@app.route('/country_info')
+def country_info():
+    query = request.args.get('query').lower()
+    for country in countries['countries']['country']:
+        if query == country['countryName'].lower():
+            return jsonify(country)
+    return jsonify({"error": "No results found"})
 
 # Run the app    
 if __name__ == '__main__':

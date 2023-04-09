@@ -15,6 +15,10 @@
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+    <script src="learn.js"></script>
 </head>
 <body>
 
@@ -31,20 +35,23 @@
         </ul>
     </nav>
 
-            <!-- Add search input and suggestions container -->
-      <div class="search-container">
-        <input type="text" class="search-input" placeholder="Search..." />
-        <i class="fa-solid fa-search search-icon"></i>
-        <div class="suggestions">
-          <ul class="suggestion-list">
-            <!-- Add suggested examples here -->
-            <li><a href="#">Suggested Example 1</a></li>
-            <li><a href="#">Suggested Example 2</a></li>
-            <li><a href="#">Suggested Example 3</a></li>
-          </ul>
+    <!-- <div class="search-wrapper">
+      <!-- Add search input and suggestions container -->
+      <div class="container main">
+          <div class="info-container">
+            <input type="text" class="search-input" placeholder="Search..." />
+              <input type="button" class="search-enter-btn" value="Enter"/>
+              <div class="output" id="capital"></div>
+              <div class="output" id="continent"></div>
+              <div class="output" id="population"></div>
+              <div class="output" id="currency"></div>
+          </div>
         </div>
       </div>
-
-</section>  
+    <div class="output" id="result"></div>
+</section> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/scripts/learn.js"></script> 
 </body>
+
 </html>
