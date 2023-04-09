@@ -4,33 +4,77 @@
     <meta charset = "utf-8" >
     <meta name="viewport"  content="width=device-width, initial-scale=1.0" >
     <title >   Countrynator | Home </title >
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Wallpoet&display=swap"
-rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Wallpoet&display=swap"
+    rel="stylesheet">
+
+    
     <link rel = "stylesheet" href = "/styles/style.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
 
 <section class = 'hero'>
-    <div class="main-width">
-        <header>
-            <div class="logo">
-                <h2><a href="#"><img src="/images/name.png" alt="app_name"></a></h2>
+    <nav class="sidebar" id="sidebar">
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <ul class="menu" id="menu">
+            <li class="pageName"><img src="/images/name.png" alt="app_name">
+            </li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">User</a></li>
+        </ul>
+      </nav>
+
+        <div class="container main">
+                <div class="input-box" id="signup-box">
+                <header>Create account</header>
+                <div class="input-field">
+                    <input type="text" class="input" id="email" required autocomplete="off">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" class="input" id="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" class="input" id="confirm-password" required>
+                    <label for="confirm-password">Confirm Password</label>
+                </div>
+                <div class="input-field">
+                    <input type="submit" class="submit" value="Sign Up">
+                    
+                </div>
+                <div class="signin">
+                    <span>Already have an account? <a id="login-link" href="#">Log in here</a></span>
+                </div>
+                </div>
+
+        <div class="input-box" id="login-box" style="display: none;">
+            <header>Log in</header>
+            <div class="input-field">
+              <input type="text" class="input" id="login-email" required autocomplete="off">
+              <label for="login-email">Email</label>
             </div>
-            <nav class = sidebar>
-                <ul>
-                    <li class="btn"><a class = "active" href="#homepage">Home</a></li>
-                    <li class="btn"><a href="#learn">Learn</a></li>
-                    <li class="btn"><a href="#play">Play</a></li>
-                    <li class="btn"><a href="#play">About</a></li>
+            <div class="input-field">
+              <input type="password" class="input" id="login-password" required>
+              <label for="login-password">Password</label>
+            </div>
+            <div class="input-field">
+              <input type="submit" class="submit" value="Log In">
+            </div>
+            <div class="signin">
+              <span>Don't have an account? <a href="#" id="signup-link">Sign up here</a></span>
+            </div>
+          </div>
+        </div>
 
-                </ul>
-            </nav>
-          </header>
-
-
+</section>  
 </body>
+<script src="/scripts/login.js"></script>
 </html>

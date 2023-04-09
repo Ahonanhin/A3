@@ -5,6 +5,21 @@
     font-family: "Poppins", sans-serif;
 }
   
+::-webkit-scrollbar {
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+::-webkit-scrollbar-thumb {
+    background: #6e93f7;
+    border-radius: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #4070f4;
+}
+
 @keyframes typing {
     0% {
         width: 0;
@@ -22,7 +37,7 @@
 
 
 body {
-    overflow-x: hidden;
+    overflow-x: auto;
 }
 
 .main-width {
@@ -30,87 +45,97 @@ body {
     max-width: 95%;
 }
 
-
-
 .hero {
-    height: 100%;
-    width: 100%;
+    /* height: 100%;
+    width: 100%; */
     min-height: 100vh;
     background: radial-gradient(#c9ff6e, 60%, #9ef10d);
-    position: relative;
-}
-
-.hero header .logo h2 a{
-    display: inline-block;
-    font-size: 32px;
-    font-weight: 700;
-    text-decoration: none;
-    margin-left: 10px;
-    margin-right: 5px;
-    padding-right: 0px;
-    color: #fff;
+    /* position: relative; */
 }
 
 .hero header {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0 10px;
-
+    align-items: center;
 }
 
-.logo img{
-    width: 60%;
-    height: 100%;
-    margin-left: 1px;
+.pageName {
+    margin-left: 0;
+    padding-left: 0;
+    flex-grow: 0;
 }
 
-
-
-.main-width {
-    width: 1400px;
-    max-width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+.pageName img{
+    width: 7em;
+    height: 2em;
 }
 
-nav ul li {  
-    list-style: none;
-    display: inline-block;  
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background-color: transparent; */
+    background-color: black;
+    display: inline ;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    z-index: 100;
 }
 
-nav ul li a {
+.hamburger {
+    display: none;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1.5rem;
+}
+  
+.menu li {
+    flex-grow: 1; /* Add this line to make each list item grow to fill the available space */
+    text-align: center; /* Add this line to center the text within each list item */
+}
+  
+
+
+.menu li a {
+    /* display: block; */
+    background: transparent;
     text-decoration: none;
-    color: #fff;
-    margin-left: 60px;
-    font-size: 18px;
+    color: #000;
+    border-radius: 5px;
+    font-size: 1em;
     font-weight: 500;
-    padding: 0 10px;
+    padding: .5em 3em;
+    border: 1px solid #fff;
     border-bottom: 2px solid transparent;
     transition: all 0.3s ease;
-}
-
-nav ul li:not(:last-child) a:hover, 
-nav ul li:not(:last-child) a:focus {
-    border-bottom: 2px solid #fff;
-}
-
-nav ul li.active a {
-    border-bottom: 2px solid #fff;
-}
-
-nav ul li.btn a {
     background: transparent;
     color: white;
     border: 1px solid #fff;
-    padding: 10px 20px; 
-    border-radius: 5px;
     line-height: 1.4;
-    font-size: 16px;
-    font-weight: 500;
-    margin-left: 150px;
+} 
+
+.menu li:not(:last-child) a:hover, 
+.menu li:not(:last-child) a:focus {
+    border-bottom: 2px solid #fff;
 }
 
-nav ul li.btn a:hover {
+
+.menu li.active a {
+    border-bottom: 2px solid #fff;
+}
+
+.menu li a:hover {
     background: #fff;
     color: #000;
     border: 1px solid #fff;
@@ -118,46 +143,29 @@ nav ul li.btn a:hover {
 }
 
 
-nav .sidebar{
-    display: inline-block;
-    justify-content: space-between;
-}
-
-.sidebar ul {
-    list-style: none;
-    margin: 10px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-} 
 
 .content {
-    padding-top: 140px;
+    padding-top: 15em;
+    padding-left: 7em;
 }
 
 .content .main-text {
     position: relative;
     z-index: 2;
-    margin-bottom: 50px;
+    margin-bottom: 10em;
 
 }
 
-.content .main-text h6 {
-    font-size: 14px;
-    font-weight: 400;
-    color: #fff;
-    margin-bottom: 40px;
-}
 
 .content .main-text h1 {
-    font-size: 100px;
+    font-size: 3.6em;
     line-height: 1;
     font-weight: 700;
     color: #fff;
-    margin: 0px 0px 40px;
+    /* margin: 0px 0px 40px; */
     font-family: 'Wallpoet', cursive;
     overflow: hidden;
-    /* white-space: nowrap; */
+    white-space: nowrap;
     border-right: 3px solid #fff;
     max-width: 100%;
     width: 0;
@@ -167,7 +175,7 @@ nav .sidebar{
 
 
 .content .main-text h3 {
-    font-size: 20px;
+    font-size: 1.6em;
     font-weight: 400;
     color: #fff;
 }
@@ -177,8 +185,9 @@ nav .sidebar{
     width: 480px;
     color: white;
     line-height: 1.8;
-    font-size: 15px;
-    margin-bottom: 40px;
+    font-size: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 
@@ -260,80 +269,199 @@ nav .sidebar{
 }
 
 
-This media query will apply the enclosed styles when the screen width is 768 pixels or less, which is a common breakpoint for mobile devices. You can adjust the styles and breakpoints to better fit your design preferences and target devices.
+.container.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #f5f5f5; */
+  }
+  
+  .input-box {
+    width: 20em;
+    padding: 2em;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-box header {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  
+  .input-field {
+    position: relative;
+    margin-bottom: 1.5em;
+  }
+  
+  .input {
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    padding: 0.5em 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    background-color: transparent;
+    color: #333;
+    outline: none;
+    transition: border-bottom-color 0.3s;
+  }
+  
+  .input:focus {
+    border-bottom-color: #009688;
+  }
+  
+  .label {
+    position: absolute;
+    top: 0.5em;
+    left: 0;
+    font-size: 1em;
+    color: #333;
+    pointer-events: none;
+    transition: all 0.3s;
+  }
+  
+  .input:focus ~ .label,
+  .input:not(:placeholder-shown) ~ .label {
+    transform: translateY(-1em);
+    font-size: 0.8em;
+    color: #009688;
+  }
+  
+  .submit {
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    padding: 0.5em 0;
+    background-color: #c9ff6e;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit:hover {
+    background-color: #c9ff6e;
+  }
+  
+  .signin {
+    text-align: center;
+    margin-top: 1em;
+  }
+  
+  .signin a {
+    color: #c9ff6e;
+    text-decoration: none;
+  }
+  
+  .signin a:hover {
+    text-decoration: underline;
+  }
 
-Remember to test your design on various screen sizes to ensure that it looks good and works well on different devices. You can use browser developer tools to simulate different screen sizes and test the responsiveness of your design.
 
+ 
 
-
-
-
-/* Add this line to your CSS */
-@media only screen and (max-width: 768px) {
-    .main-width {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .hero header {
-        flex-direction: column;
-    }
-
-    .hero header .logo h2 a {
-        font-size: 24px;
-    }
-
-    nav ul li a {
-        margin-left: 30px;
-        font-size: 16px;
-    }
-
-    nav ul li.btn {
-        display: none;
-    }
-
-    .content {
-        padding-top: 100px;
-    }
-
-    .content .main-text {
-        margin-bottom: 30px;
-    }
-
-    .content .main-text h6 {
-        margin-bottom: 20px;
-    }
-
-    .content .main-text h1 {
-        font-size: 70px;
-        margin-bottom: 20px;
-    }
-
-    .content .main-text p {
-        width: 100%;
-    }
-
-    .content .main-text a {
-        font-size: 12px;
-    }
-
-    .content .main-text a.cta {
-        margin-left: 10px;
-    }
-
-    .content .socials {
-        margin-top: 100px;
-    }
-
-    .content .socials a {
-        font-size: 16px;
-    }
-
-    .blocks {
-        flex-direction: column;
-    }
-
-    .blocks div {
-        max-width: 100%;
-    }
+.slideshow {
+  display: flex;
+  gap: 3em;
+  max-width:100%;
+  width: 100%;
+  /* background: #4070f4; */
+  border-radius: 12px;
+  padding: 3em;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scroll-padding: 30px;
+  box-shadow: 0 1em 1.6em rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
 }
+
+.slideshow .card {
+  display: flex;
+  flex: 0 0 50%;
+  flex-direction: column;
+  align-items: center;
+  padding: 3em;
+  border-radius: 12px;
+  background: #000;
+  scroll-snap-align: start;
+  /* box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); */
+}
+.card .image {
+  height: 150px;
+  width: 150px;
+  padding: 4px;
+  background: #fff;
+  border-radius: 50%;
+}
+.image img {
+  height: 100%;
+  width: 100%;
+  /* object-fit: cover; */
+  border-radius: 50%;
+  border: 0.01em solid #c9ff6e;
+}
+.card h2 {
+  margin-top: 1.3em;
+  color: #c9ff6e;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+.card p {
+  margin-top: 0.3em;
+  font-size: 1em;
+  font-weight: 400;
+  color: #c9ff6e;
+  text-align: center;
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .sidebar {
+      display: none;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+
+    .hamburger {
+        display: block;
+      }
+    
+      .menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+    
+      .menu li {
+        margin-bottom: 1.5rem;
+      }
+    
+      .menu a {
+        color: white;
+        font-size: 1.5rem;
+      }
+
+} 
+
+
