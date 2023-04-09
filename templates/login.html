@@ -35,6 +35,10 @@
                 <div class="input-box" id="signup-box">
                 <header>Create account</header>
                 <div class="input-field">
+                  <input type="text" class="input" id="username" required autocomplete="off">
+                  <label for="username">username</label>
+              </div>
+                <div class="input-field">
                     <input type="text" class="input" id="email" required autocomplete="off">
                     <label for="email">Email</label>
                 </div>
@@ -70,6 +74,17 @@
             </div>
             <div class="signin">
               <span>Don't have an account? <a href="#" id="signup-link">Sign up here</a></span>
+            </div>
+          </div>
+
+          <div class="input-box" id="user-info" style="display: none;">
+            <header>User Info</header>
+            <div class="user-details">
+              <p>Username: <span id="user-username"></span></p>
+              <p>Email: <span id="user-email"></span></p>
+            </div>
+            <div class="input-field">
+              <input type="submit" class="submit" value="Logout" id="logout-button">
             </div>
           </div>
         </div>

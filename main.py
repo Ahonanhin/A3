@@ -2,13 +2,33 @@ from flask import Flask, render_template, jsonify, request, redirect, url_for, s
 from flask_sqlalchemy import SQLAlchemy
 import json
 import random
-from datetime import datetime
-from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
-#intitialize SQL database
-# db = SQLAlchemy(app)
 
+# Create the Flask app
+app = Flask(__name__)
+
+app.secret_key = 'secret key'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+
+
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(255), nullable=False)
+
+    def set_password(self, password):
+        self.password = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password, password)
+
+# db.create_all()
 
 # Load the data
 with open('static/data/countries.json', 'r',encoding='utf-8') as data_countries:
@@ -17,13 +37,48 @@ with open('static/data/countries.json', 'r',encoding='utf-8') as data_countries:
 
 # print(countries["countries"]['country'][0]['countryName'])
 
-# Create the Flask app
-app = Flask(__name__)
 
-app.secret_key = 'secret key'
+#User Authentication
+@app.route('/register', methods=['POST'])
+def register():
+    data = request.get_json()
+    if User.query.filter_by(username=data['username']).first() or User.query.filter_by(email=data['email']).first():
+        return jsonify({"error": "Username or email already exists"}), 400
 
-#set SQL Alchemy Database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+    new_user = User(username=data['username'], email=data['email'])
+    new_user.set_password(data['password'])
+    db.session.add(new_user)
+    db.session.commit()
+    session['user_id'] = new_user.id
+
+    return jsonify({"message": "User created successfully"}), 201
+
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    user = User.query.filter_by(username=data['username']).first() or User.query.filter_by(email=data['username']).first()
+
+    if user and user.check_password(data['password']):
+        session['user_id'] = user.id
+        return jsonify({"message": "Logged in successfully"}), 200
+    else:
+        return jsonify({"error": "Invalid username or password"}), 401
+
+@app.route('/logout', methods=['POST'])
+def logout():
+    session.pop('user_id', None)
+    return jsonify({"message": "Logged out successfully"}), 200
+
+@app.route('/user_info', methods=['GET'])
+def user_info():
+    user = User.query.get(session.get('user_id'))
+    if user:
+        return jsonify({"username": user.username, "email": user.email})
+    else:
+        return jsonify({"error": "User not found"}), 404
+
+
+
 
 # Configure the app
 #Flask-server Routes
@@ -92,4 +147,6 @@ def generate_questions(continent):
 
 # Run the app    
 if __name__ == '__main__':
-    app.run(debug=True) 
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True)
