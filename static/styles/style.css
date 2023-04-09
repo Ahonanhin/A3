@@ -572,12 +572,12 @@ body {
 
   
 /* Media query for smaller screens */
-@media (max-width: 768px) {
-    .sidebar {
+/* @media (max-width: 768px) { */
+    /* .sidebar {
       display: none;
-    }
+    } */
   
-    .hamburger {
+    /* .hamburger {
       display: flex;
     }
 
@@ -608,6 +608,6 @@ body {
         font-size: 1.5rem;
       }
 
-} 
+}  */
 
 

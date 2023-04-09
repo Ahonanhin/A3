@@ -10,12 +10,12 @@
         rel="stylesheet">
     
         
-        <link rel = "stylesheet" href = "/styles/style.css" >
+        <link rel = "stylesheet" href = "/static/styles/style.css" >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-        <script src="home.js"></script>
+        <script src="/static/scripts/home.js"></script>
     </head>
     <body>
     
@@ -23,12 +23,12 @@
         <nav class="sidebar" id="sidebar">
             <button class="hamburger" id="hamburger">&#9776;</button>
             <ul class="menu" id="menu">
-                <li class="pageName"><img src="/images/name.png" alt="app_name">
+                <li class="pageName"><img src="/static/images/name.png" alt="app_name">
                 </li>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Play</a></li>
-              <li><a href="#">Learn</a></li>
-              <li><a href="#">User</a></li>
+                <li><a href="{{url_for('home')}}">Home</a></li>
+                <li><a href="{{url_for('play')}}">Play</a></li>
+                <li><a href="{{url_for('learn')}}">Learn</a></li>
+                <li><a href="{{url_for('user')}}">User</a></li>
             </ul>
           </nav>
 
@@ -40,11 +40,11 @@
                     <h1> So you know  geo? </h1>
                     <p> Test your geographical knowledge with this brand
                         new game brought to you by The Experts</p>
-                    <a href="#" >Play Now</a>
-                    <a href="#" class="cta"><i class="fa-solid fa-play"></i>Watch GamePlay</a>
+                    <a href="{{url_for('play')}}" >Play Now</a>
+                    <a href="{{url_for('video')}}" class="cta"><i class="fa-solid fa-play"></i>Watch GamePlay</a>
                 </div>
                 <div class="image">
-                    <img src="/images/traveler.png" alt="logo">
+                    <img src="/static/images/traveler.png" alt="logo">
                 </div>
             </div>
      
