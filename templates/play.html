@@ -33,7 +33,7 @@
 
       <div class="slideshow">
         
-        <div class="card">
+        <div class="card" data-continent="Africa" onclick="loadQuestions(this.dataset.continent)">
             <div class="image">
               <img src="/static/images/africa.png" alt="" />
             </div>
@@ -41,7 +41,7 @@
             <p> Don't you FINALLY want to know where in Africa Nigeria is?</p>
           </div>
 
-        <div class="card">
+        <div class="card"data-continent="Europe" onclick="loadQuestions(this.dataset.continent)">
           <div class="image">
             <img src="/static/images/europe.png" alt="" />
           </div>
@@ -49,7 +49,7 @@
           <p>I bet you didn't know Sofia was the capital of Bulgaria.</p>
         </div>
 
-        <div class="card">
+        <div class="card" data-continent="Oceania" onclick="loadQuestions(this.dataset.continent)">
           <div class="image">
             <img src="/static/images/oceania.png" alt="" />
           </div>
@@ -57,7 +57,7 @@
           <p>No, it's not just Australia and New Zealand.</p>
         </div>
 
-        <div class="card">
+        <div class="card" data-continent="North America" onclick="loadQuestions(this.dataset.continent)">
           <div class="image">
             <img src="/static/images/northam.jpg" alt="" />
           </div>
@@ -65,7 +65,7 @@
           <p>Yeah, that's where Costa Rica is!</p>
         </div>
 
-        <div class="card">
+        <div class="card" data-continent="South America" onclick="loadQuestions(this.dataset.continent)">
             <div class="image">
               <img src="/static/images/southam.png" alt="" />
             </div>
@@ -73,7 +73,7 @@
             <p>They breathe football there.</p>
         </div>
 
-        <div class="card">
+        <div class="card" data-continent="Asia" onclick="loadQuestions(this.dataset.continent)">
             <div class="image">
               <img src="/static/images/asia.jpg" alt="" />
             </div>
@@ -82,5 +82,5 @@
         </div>
     </section>  
 </body>
-<script src="/static/scripts/login.js"></script>
+<script src="/static/scripts/play.js"></script>
 </html>

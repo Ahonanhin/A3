@@ -406,6 +406,12 @@ body {
   scroll-snap-align: start;
   /* box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); */
 }
+
+.card:hover{
+  cursor: pointer;
+}
+
+
 .card .image {
   height: 150px;
   width: 150px;
@@ -440,7 +446,7 @@ body {
     top: 20%;
     padding: 1em;
 }
-  
+
 .search-input {
   width: 100%;
   padding: 1em 1em;
@@ -486,11 +492,12 @@ body {
 
 /* Add CSS for result div */
 .output {
-  display: block;
+  display: flex;
   margin-top: 2em;
   font-size: 1.2em;
-  color: #333;
-  justify-content: center;
+  color: #BF40BF;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .quiz-container {
@@ -563,6 +570,11 @@ body {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-container .selected-option {
+  background-color: #0b0c0d;
+  border-color: #edffb8;
 }
 
 /* Media query for smaller screens */

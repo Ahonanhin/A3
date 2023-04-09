@@ -1,55 +1,94 @@
-const quizData = [
-    {
-      question: "What is the capital of France?",
-      options: ["Paris", "London", "Berlin", "Rome"],
-      correct: 1
+let currentQuestionIndex = 0;
+let score = 0;
+let questions = [];
+
+async function loadQuestions(continent) {
+  const response = await fetch(`/quiz`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
     },
-    // Add more questions here
-  ];
+    body: JSON.stringify({selectedContinent: continent}),
+  });
+  const data = await response.json();
+  startQuiz(data); // Change this line
+}
 
-  let currentQuestion = 0;
-  let score = 0;
-
-  const quizQuestion = document.querySelector(".quiz-question");
-  const quizOptions = document.querySelectorAll(".quiz-option");
-  const nextQuestionBtn = document.querySelector(".next-question");
-  const scoreNumber = document.querySelector(".score-number");
-
-  function updateQuestion() {
-    quizQuestion.textContent = quizData[currentQuestion].question;
-    quizOptions.forEach((option, index) => {
-      option.textContent = quizData[currentQuestion].options[index];
-    });
+document.addEventListener('DOMContentLoaded', async () => {
+  const selectedContinent = sessionStorage.getItem('selectedContinent');
+  if (!selectedContinent) {
+      // Redirect to the homepage if no continent is selected
+      window.location.href = '/';
+      return;
   }
+  await loadQuestions(selectedContinent);
+});
 
-  function checkAnswer(answer) {
-    if (answer == quizData[currentQuestion].correct) {
-      score++;
-      scoreNumber.textContent = score;
+function startQuiz(loadedQuestions) {
+    questions = loadedQuestions;
+    currentQuestionIndex = 0;
+    score = 0;
+    displayQuestion();
+}
+
+function displayQuestion() {
+    if (currentQuestionIndex >= questions.length) {
+        // Show the final score and end the quiz
+        alert(`Your score: ${score}`);
+        return;
     }
-  }
 
-  function nextQuestion() {
-    currentQuestion++;
-    if (currentQuestion < quizData.length) {
-      updateQuestion();
-    } else {
-      alert("Quiz completed! Your score: " + score);
-      // Reset the quiz
-      currentQuestion = 0;
-      score = 0;
-      scoreNumber.textContent = score;
-      updateQuestion();
+    const question = questions[currentQuestionIndex];
+    const quizQuestion = document.querySelector('.quiz-question');
+    const quizOptions = document.querySelectorAll('.quiz-option');
+
+    quizQuestion.textContent = question.question;
+
+    for (let i = 0; i < question.options.length; i++) {
+        quizOptions[i].textContent = question.options[i];
     }
-  }
+}
 
+const quizOptions = document.querySelectorAll('.quiz-option');
+let selectedOption;
+
+function updateSelectedOption(clickedOption) {
   quizOptions.forEach((option) => {
-    option.addEventListener("click", () => {      
-    const answer = option.getAttribute("data-option");
-    checkAnswer(answer);
+    if (option === clickedOption) {
+      option.classList.add('selected-option');
+    } else {
+      option.classList.remove('selected-option');
+    }
+  });
+}
+
+quizOptions.forEach((option) => {
+  option.addEventListener('click', (e) => {
+    selectedOption = e.target;
+    updateSelectedOption(e.target);
   });
 });
 
-nextQuestionBtn.addEventListener("click", nextQuestion);
+const nextQuestionBtn = document.querySelector('.next-question');
+nextQuestionBtn.addEventListener('click', () => {
+  // Validate the answer and update the score if the answer is correct
+  if (selectedOption && selectedOption.textContent === questions[currentQuestionIndex].correctAnswer) {
+    score++;
+  }
+  
+  // Update the score display
+  updateScoreDisplay();
+  
+  // Move on to the next question
+  currentQuestionIndex++;
+  displayQuestion();
+  
+  // Reset the selected option
+  selectedOption = null;
+});
 
-updateQuestion(); // Load the first question on page load
+
+function updateScoreDisplay() {
+  const scoreElement = document.getElementById('scorenum');
+  scoreElement.textContent = score;
+}
