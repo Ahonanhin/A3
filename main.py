@@ -2,6 +2,13 @@ from flask import Flask, render_template, jsonify, request, redirect, url_for, s
 from flask_sqlalchemy import SQLAlchemy
 import json
 import random
+from datetime import datetime
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+
+
+#intitialize SQL database
+# db = SQLAlchemy(app)
+
 
 # Load the data
 with open('static/data/countries.json', 'r',encoding='utf-8') as data_countries:
