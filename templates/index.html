@@ -21,7 +21,19 @@
     <script src="/static/scripts/home.js"></script>
 </head>
 <body>
-
+    <div class="navbar">
+        <ol>
+            <li class="pageName"><img src="/static/images/name.png" alt="app_name"></li>
+        </ol>
+        <input class="menu-btn" type="checkbox" id="menu-btn"/>
+        <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+        <ul class="menu" id="menu">
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('play')}}">Play</a></li>
+            <li><a href="{{url_for('learn')}}">Learn</a></li>
+            <li><a href="{{url_for('user')}}">User</a></li>
+        </ul>
+      </div>
 <section class='hero'>
     <!-- Sidebar navigation -->
     <nav class="sidebar" id="sidebar">
@@ -44,7 +56,6 @@
                 <h1>So you know geo?</h1>
                 <p>Test your geographical knowledge with this brand new game brought to you by The Experts</p>
                 <a href="{{url_for('play')}}">Play Now</a>
-                <a href="{{url_for('video')}}" class="cta"><i class="fa-solid fa-play"></i>Watch GamePlay</a>
             </div>
             <div class="image">
                 <img src="/static/images/traveler.png" alt="logo">

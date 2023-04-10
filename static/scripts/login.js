@@ -79,6 +79,7 @@ document.getElementById('login-link').addEventListener('click', function(event) 
   if (response.ok) {
   // Hide the user info box and display the login box
   document.getElementById('user-info').style.display = 'none';
+  document.getElementById('table').style.display = 'none';
   document.getElementById('login-box').style.display = 'block';
   } else {
   const error = await response.json();

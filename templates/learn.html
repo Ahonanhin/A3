@@ -21,6 +21,19 @@
     <script src="learn.js"></script>
 </head>
 <body>
+    <div class="navbar">
+        <ol>
+            <li class="pageName"><img src="/static/images/name.png" alt="app_name"></li>
+        </ol>
+        <input class="menu-btn" type="checkbox" id="menu-btn"/>
+        <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+        <ul class="menu" id="menu">
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('play')}}">Play</a></li>
+            <li><a href="{{url_for('learn')}}">Learn</a></li>
+            <li><a href="{{url_for('user')}}">User</a></li>
+        </ul>
+      </div>
 
 <section class='hero'>
     <!-- Sidebar navigation -->
@@ -39,7 +52,7 @@
     <div class="container main">
         <div class="info-container">
             <!-- Search input and output containers -->
-            <input type="text" class="search-input" placeholder="Search..." />
+            <input type="text" class="search-input" placeholder="Enter a country..." />
             <input type="button" class="search-enter-btn" value="Enter" />
             <div class="output" id="capital"></div>
             <div class="output" id="continent"></div>
@@ -47,7 +60,6 @@
             <div class="output" id="currency"></div>
         </div>
     </div>
-    <div class="score-display">Score: <span id="score">0</span></div>
 </section>
 
 <!-- Include jQuery and custom scripts -->

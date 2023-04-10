@@ -13,6 +13,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+  <div class="navbar">
+    <ol>
+        <li class="pageName"><img src="/static/images/name.png" alt="app_name"></li>
+    </ol>
+    <input class="menu-btn" type="checkbox" id="menu-btn"/>
+    <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+    <ul class="menu" id="menu">
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('play')}}">Play</a></li>
+        <li><a href="{{url_for('learn')}}">Learn</a></li>
+        <li><a href="{{url_for('user')}}">User</a></li>
+    </ul>
+  </div>
 
  <!-- Hero section with navigation bar and slideshow -->
  <section class='hero'>
