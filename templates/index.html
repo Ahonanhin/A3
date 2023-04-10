@@ -1,65 +1,66 @@
 <!DOCTYPE html>
-<html lang = eng >
+<html lang="en">
 <head>
-    <meta charset = "utf-8" >
-    <meta name="viewport"  content="width=device-width, initial-scale=1.0" >
-    <title >   Countrynator | Home </title >
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Wallpoet&display=swap"
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countrynator | Home</title>
+    <!-- Link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Wallpoet&display=swap"
         rel="stylesheet">
-    
-        
-        <link rel = "stylesheet" href = "/static/styles/style.css" >
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <!-- Link to Font Awesome icons library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-        <script src="/static/scripts/home.js"></script>
-    </head>
-    <body>
-    
-    <section class = 'hero'>
-        <nav class="sidebar" id="sidebar">
-            <button class="hamburger" id="hamburger">&#9776;</button>
-            <ul class="menu" id="menu">
-                <li class="pageName"><img src="/static/images/name.png" alt="app_name">
-                </li>
-                <li><a href="{{url_for('home')}}">Home</a></li>
-                <li><a href="{{url_for('play')}}">Play</a></li>
-                <li><a href="{{url_for('learn')}}">Learn</a></li>
-                <li><a href="{{url_for('user')}}">User</a></li>
-            </ul>
-          </nav>
 
-          <div class="content">
-            <div class="blocks">
-                <div class="main-text">
-                    <h6>  </h6>
-                    <h3> #1 Grossing Game </h3>
-                    <h1> So you know  geo? </h1>
-                    <p> Test your geographical knowledge with this brand
-                        new game brought to you by The Experts</p>
-                    <a href="{{url_for('play')}}" >Play Now</a>
-                    <a href="{{url_for('video')}}" class="cta"><i class="fa-solid fa-play"></i>Watch GamePlay</a>
-                </div>
-                <div class="image">
-                    <img src="/static/images/traveler.png" alt="logo">
-                </div>
+    <!-- Link to external JavaScript file -->
+    <script src="/static/scripts/home.js"></script>
+</head>
+<body>
+
+<section class='hero'>
+    <!-- Sidebar navigation -->
+    <nav class="sidebar" id="sidebar">
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <ul class="menu" id="menu">
+            <li class="pageName"><img src="/static/images/name.png" alt="app_name"></li>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('play')}}">Play</a></li>
+            <li><a href="{{url_for('learn')}}">Learn</a></li>
+            <li><a href="{{url_for('user')}}">User</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <!-- Main text and image block -->
+        <div class="blocks">
+            <div class="main-text">
+                <h6></h6>
+                <h3>#1 Grossing Game</h3>
+                <h1>So you know geo?</h1>
+                <p>Test your geographical knowledge with this brand new game brought to you by The Experts</p>
+                <a href="{{url_for('play')}}">Play Now</a>
+                <a href="{{url_for('video')}}" class="cta"><i class="fa-solid fa-play"></i>Watch GamePlay</a>
             </div>
-     
-
-            <div class="socials">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <div class="image">
+                <img src="/static/images/traveler.png" alt="logo">
             </div>
+        </div>
 
-            
-          </div>
+        <!-- Social media icons -->
+        <div class="socials">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+
     </div>
-
+</section>
 </body>
 </html>

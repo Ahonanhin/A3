@@ -1,0 +1,10 @@
+Names, Student #: 
+    John Cho, 1007661594
+    Yann Ahonanhin, 1008090281
+    Adam Badar, 1007965338
+
+We proudly present "Countrynator", a dynamic website designed to test your geographical knowledge. Our platform offers an interactive experience where users can challenge themselves with geography quizzes in the Play tab. With options to select a specific continent, users can answer a series of 10 questions, earning 1 point for each correct answer and 0 points for each incorrect answer.
+
+In addition to the engaging gameplay, Countrynator provides a Learn tab that allows users to search for countries and access information about them. The User tab offers a personalized experience, allowing users to create an account and log in to save their scores and track their progress over time.
+
+Join us on Countrynator to expand your knowledge about the world and put your geography skills to the test in a fun and interactive way!
