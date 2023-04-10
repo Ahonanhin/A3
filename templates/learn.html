@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang = eng >
+<html lang="eng">
 <head>
-    <meta charset = "utf-8" >
-    <meta name="viewport"  content="width=device-width, initial-scale=1.0" >
-    <title >   Countrynator | Home </title >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countrynator | Home</title>
+    <!-- Include Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Wallpoet&display=swap"
-    rel="stylesheet">
+          rel="stylesheet">
 
-    
-    <link rel = "stylesheet" href = "/static/styles/style.css" >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <!-- Include custom stylesheets and external libraries -->
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
@@ -22,12 +22,12 @@
 </head>
 <body>
 
-<section class = 'hero'>
+<section class='hero'>
+    <!-- Sidebar navigation -->
     <nav class="sidebar" id="sidebar">
         <button class="hamburger" id="hamburger">&#9776;</button>
         <ul class="menu" id="menu">
-            <li class="pageName"><img src="/static/images/name.png" alt="app_name">
-            </li>
+            <li class="pageName"><img src="/static/images/name.png" alt="app_name"></li>
             <li><a href="{{url_for('home')}}">Home</a></li>
             <li><a href="{{url_for('play')}}">Play</a></li>
             <li><a href="{{url_for('learn')}}">Learn</a></li>
@@ -35,23 +35,23 @@
         </ul>
     </nav>
 
-    <!-- <div class="search-wrapper">
-      <!-- Add search input and suggestions container -->
-      <div class="container main">
-          <div class="info-container">
+    <!-- Main content section -->
+    <div class="container main">
+        <div class="info-container">
+            <!-- Search input and output containers -->
             <input type="text" class="search-input" placeholder="Search..." />
-              <input type="button" class="search-enter-btn" value="Enter"/>
-              <div class="output" id="capital"></div>
-              <div class="output" id="continent"></div>
-              <div class="output" id="population"></div>
-              <div class="output" id="currency"></div>
-          </div>
+            <input type="button" class="search-enter-btn" value="Enter" />
+            <div class="output" id="capital"></div>
+            <div class="output" id="continent"></div>
+            <div class="output" id="population"></div>
+            <div class="output" id="currency"></div>
         </div>
-      </div>
-      <div class="score-display">Score: <span id="score">0</span></div>
-    </section> 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="/static/scripts/learn.js"></script> 
-</body>
+    </div>
+    <div class="score-display">Score: <span id="score">0</span></div>
+</section>
 
+<!-- Include jQuery and custom scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/scripts/learn.js"></script>
+</body>
 </html>
