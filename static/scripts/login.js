@@ -13,6 +13,7 @@ document.getElementById('login-link').addEventListener('click', function(event) 
   
     // Hide the signup box and display the login box
     document.getElementById('signup-box').style.display = 'none';
+    document.getElementById('table').style.display = 'none';
     document.getElementById('login-box').style.display = 'block';
   });
   
@@ -21,6 +22,7 @@ document.getElementById('login-link').addEventListener('click', function(event) 
     
     // Hide the login box and display the signup box
     document.getElementById('signup-box').style.display = 'block';
+    document.getElementById('table').style.display = 'none';
     document.getElementById('login-box').style.display = 'none';
   });
 
@@ -71,6 +73,8 @@ document.getElementById('login-link').addEventListener('click', function(event) 
       // Hide the login box and display the user info box
   document.getElementById('login-box').style.display = 'none';
   document.getElementById('user-info').style.display = 'block';
+  document.getElementById('table').style.display = 'block';
+
   updateUserInfo();
 } else {
   const error = await response.json();
