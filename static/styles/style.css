@@ -577,6 +577,46 @@ body {
   border-color: #edffb8;
 }
 
+  /* General table styles */
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+  }
+
+  th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+  }
+
+  th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+  }
+
+  tr:nth-child(even) {
+      background-color: #f2f2f2;
+  }
+
+  /* Past quizzes section */
+  #table {
+      margin-top: 2rem;
+  }
+
+  #table h2 {
+      margin-bottom: 1rem;
+  }
+
+  /* Filter section */
+  #table label, #table input {
+      margin-right: 1rem;
+  }
+  
+  #score-output {
+      margin-left: 0.5rem;
+  }
+
 /* Media query for smaller screens */
 /* @media (max-width: 768px) { */
     /* .sidebar {

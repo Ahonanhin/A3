@@ -35,6 +35,7 @@ function displayQuestion() {
     if (currentQuestionIndex >= questions.length) {
         // Show the final score and end the quiz
         alert(`Your score: ${score}`);
+        submitQuiz(); // Add this line
         return;
     }
 
@@ -91,4 +92,34 @@ nextQuestionBtn.addEventListener('click', () => {
 function updateScoreDisplay() {
   const scoreElement = document.getElementById('scorenum');
   scoreElement.textContent = score;
+}
+
+async function submitQuiz() {
+  const date = new Date();
+  const date_taken = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+  const quiz_data = {
+    date_taken: date_taken,
+    score: score,
+    total_questions: questions.length,
+  };
+
+  const response = await fetch('/submit_quiz', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(quiz_data),
+  });
+
+  if (response.status === 401) {
+    alert('You must be logged in to submit quiz results.');
+    return;
+  }
+
+  const data = await response.json();
+  if (data.success) {
+    alert(`Your score: ${score}`);
+  } else {
+    alert('An error occurred while submitting your quiz results. Please try again later.');
+  }
 }
