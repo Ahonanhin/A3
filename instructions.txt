@@ -3,8 +3,16 @@ Names, Student #:
     Yann Ahonanhin, 1008090281
     Adam Badar, 1007965338
 
-We proudly present "Countrynator", a dynamic website designed to test your geographical knowledge. Our platform offers an interactive experience where users can challenge themselves with geography quizzes in the Play tab. With options to select a specific continent, users can answer a series of 10 questions, earning 1 point for each correct answer and 0 points for each incorrect answer.
+Countrynator is built using Flask, a popular Python web framework, and SQLite, a lightweight database engine. It also utilizes the SQLAlchemy ORM to handle database operations seamlessly. The platform integrates a user authentication system that allows users to register, log in, and manage their accounts securely. The user's passwords are hashed using the Werkzeug security library to ensure data privacy.
 
-In addition to the engaging gameplay, Countrynator provides a Learn tab that allows users to search for countries and access information about them. The User tab offers a personalized experience, allowing users to create an account and log in to save their scores and track their progress over time.
+The platform uses a JSON dataset containing information about countries, including their names, capitals, currencies, and continents. The dataset is loaded into memory during application initialization to optimize the quiz generation and information retrieval process.
 
-Join us on Countrynator to expand your knowledge about the world and put your geography skills to the test in a fun and interactive way!
+In the Learn tab, users can search for a specific country to retrieve its information, such as capital city, currency, and population. This feature is implemented using a simple search algorithm that iterates through the loaded dataset, allowing for efficient search capabilities.
+
+The Play tab provides an engaging quiz experience, where users can choose a continent and attempt a set of 10 questions. The questions are generated using a custom algorithm that selects random countries from the chosen continent and creates a question regarding either the capital or currency of the country. To ensure variety, the algorithm shuffles the possible answer options for each question.
+
+Countrynator also offers a personalized experience through the User tab. By creating an account, users can save their quiz results and track their progress over time. The platform stores quiz results in the SQLite database, associating them with the user's account. Users can view their past quizzes, filter them by date or score, and sort them in ascending or descending order based on their preferences.
+
+To ensure a visually appealing and user-friendly interface, Countrynator uses HTML, CSS, and JavaScript for front-end development. The platform employs responsive design principles to ensure smooth operation on various devices and screen sizes.
+
+In summary, Countrynator is a comprehensive geography learning platform that combines an interactive quiz experience, informational resources, and personalized user experience. It leverages modern web development technologies to provide a fun and engaging way to expand your knowledge of the world and test your geography skills.

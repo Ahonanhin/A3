@@ -21,6 +21,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 db = SQLAlchemy(app)
 
 
+# Function to validate user input during registration
 
 def is_valid_input(username, email, password):
     # Username: no special characters, no profanity
@@ -42,7 +43,7 @@ def is_valid_input(username, email, password):
 
     return True, "Valid input"
 
-
+# Define User model
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
@@ -88,6 +89,10 @@ def register():
 
     return jsonify({"message": "User created successfully"}), 201
 
+
+
+# User Authentication
+# ... (the original authentication route functions) ...
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -136,9 +141,10 @@ def check_login():
         return jsonify({"is_logged_in": True, "username": user.username, "email": user.email})
     else:
         return jsonify({"is_logged_in": False})
-    
-# Configure the app
-#Flask-server Routes
+
+
+# Routes for the app pages
+# ... (the original route functions) ...
 
 @app.route('/')
 def home():
@@ -156,9 +162,9 @@ def play():
 def user():
     return render_template("login.html")
 
-@app.route('/video')
-def video():
-    return render_template("home.html")
+
+
+# Function to generate quiz questions
 
 @app.route('/quizz')
 def quizz():
@@ -203,7 +209,8 @@ def generate_questions(continent):
     return questions
 
 
-#quiz handler
+
+# QuizResult model
 class QuizResult(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
@@ -214,6 +221,7 @@ class QuizResult(db.Model):
     user = db.relationship('User', backref=db.backref('quiz_results', lazy=True))
 
 
+# Route to handle quiz submission
 @app.route('/submit_quiz', methods=['POST'])
 def submit_quiz():
     user_id = session.get('user_id')
@@ -232,7 +240,7 @@ def submit_quiz():
 
     return jsonify({"success": True})
 
-
+# Route to get past quizzes for the logged-in user
 @app.route('/past_quizzes')
 def past_quizzes():
     user_id = session.get('user_id')
@@ -266,6 +274,7 @@ def past_quizzes():
         'score': quiz.score,
         'total_questions': quiz.total_questions
     } for quiz in past_quizzes])
+
 
 # Run the app    
 if __name__ == '__main__':
