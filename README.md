@@ -6,12 +6,18 @@ Welcome to Countrynator, an all-in-one web application designed to boost your ge
 
 ### Learn Tab
 The Learn tab allows users to search for specific countries and access comprehensive information, including capital cities, currencies, and populations. The platform optimizes data retrieval by loading a JSON dataset during initialization.
+See Below
+![7](https://github.com/Ahonanhin/Countrynator/assets/69763285/0d05a7cf-cb75-478f-9ddf-b3d0a1643866)
 
 ### Play Tab
 The Play tab offers an interactive quiz experience. Users can choose a continent and answer 10 random questions. The quiz algorithm generates diverse questions about the capital or currency of randomly selected countries, ensuring a unique quiz every time.
+![3](https://github.com/Ahonanhin/Countrynator/assets/69763285/5734cc2e-e113-4da3-ae1c-617321108bbc)
+![6](https://github.com/Ahonanhin/Countrynator/assets/69763285/2dea7a1b-9e7f-4414-bd46-9ebf9159691b)
 
 ### User Tab
 Countrynator provides a personalized experience with user accounts. Users can register and log in to save quiz results and monitor their progress. Quiz results are stored in an SQLite database, enabling users to review past quizzes and sort them based on date or score.
+![4](https://github.com/Ahonanhin/Countrynator/assets/69763285/05838b80-e0ba-4fd1-961c-93fbbb03d392)
+
 
 ## Technology Stack
 - **Flask**: A Python web framework for efficient web development.
