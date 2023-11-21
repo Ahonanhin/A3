@@ -1,6 +1,6 @@
 # Countrynator - Your Interactive Geography Tutor
 
-Welcome to Countrynator, an all-in-one web application designed to boost your geography knowledge through engaging quizzes, informative resources, and personalized user experiences. Developed using Flask, SQLite, and cutting-edge web development technologies, Countrynator offers a user-friendly platform for users to explore and challenge their geography knowledge.
+Welcome to Countrynator, an all-in-one web application designed to boost your geography knowledge through engaging quizzes, informative resources, and personalized user experiences. Developed using Flask and SQLite, Countrynator offers a user-friendly platform for users to explore and challenge their geography knowledge.
 
 ## Features
 
