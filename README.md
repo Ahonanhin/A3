@@ -16,7 +16,7 @@ The Play tab offers an interactive quiz experience. Users can choose a continent
 
 ### User Tab
 Countrynator provides a personalized experience with user accounts. Users can register and log in to save quiz results and monitor their progress. Quiz results are stored in an SQLite database, enabling users to review past quizzes and sort them based on date or score.
-![4](https://github.com/Ahonanhin/Countrynator/assets/69763285/05838b80-e0ba-4fd1-961c-93fbbb03d392)
+![8](https://github.com/Ahonanhin/Countrynator/assets/69763285/d241e088-a5ed-4315-ab9c-336f7c2b515b)
 
 
 ## Technology Stack
